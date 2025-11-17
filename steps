@@ -34,6 +34,20 @@ eksctl create cluster --name three-tier-cluster --region us-west-2 --node-type t
 aws eks update-kubeconfig --region us-west-2 --name three-tier-cluster
 kubectl get nodes
 
+after completing of cluster setup
+kubectl get nodes
+
+git clone <>
+cd eks-manifests
+kubectl apply -f mysql-secrets.yml -f mysql-configmap.yml -f mysql-deployment.yml -f mysql-svc.yml
+kubectl apply -f two-tier-app-deployment.yml -f two-tier-app-svc.yml
+ls
+kubectl get all
+kunectl get podes
+kubectl describe pod <podname>mysql  ->volumes:type-configmap
+access->kubectl get svc->domain in form external-ip
+
+use of
 secrets
 password encode
 echo -n "admin" | base64 ->encoded password 
